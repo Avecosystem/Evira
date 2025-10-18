@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evira - Secure Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing-page" class="page active">
+        <div class="container">
+            <div class="logo">
+                <!-- Enhanced golden massage icon -->
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="9" stroke="url(#goldGradient)" stroke-width="2"/>
+                    <path d="M12 8V12" stroke="url(#goldGradient)" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 16H12.01" stroke="url(#goldGradient)" stroke-width="2" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#D4AF37"/>
+                            <stop offset="100%" stop-color="#B8860B"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h1>Evira</h1>
+            </div>
+            <div class="welcome-content">
+                <h2>Secure, Private Messaging</h2>
+                <p>Evira provides end-to-end encrypted peer-to-peer messaging with automatic message deletion. No login, no database, no tracking.</p>
+                
+                <div class="feature-highlight">
+                    <div class="feature">
+                        <div class="feature-icon">🔒</div>
+                        <h4>End-to-End Encryption</h4>
+                        <p>All messages are encrypted in transit and never stored on any server.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">⏱️</div>
+                        <h4>Auto-Deletion</h4>
+                        <p>Messages automatically delete after 10, 20, or 30 minutes of your choice.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">👤</div>
+                        <h4>Peer-to-Peer</h4>
+                        <p>Direct connection between devices with no intermediaries.</p>
+                    </div>
+                </div>
+                
+                <div class="instructions">
+                    <h3>How to Connect with Friends:</h3>
+                    <ol>
+                        <li><strong>Start a chat:</strong> Click "Start New Chat" to generate your unique chat ID</li>
+                        <li><strong>Share your ID:</strong> Send your chat ID to your friend (via any messaging app)</li>
+                        <li><strong>Your friend connects:</strong> They open Evira and enter your chat ID</li>
+                        <li><strong>Chat securely:</strong> Messages delete automatically after selected time</li>
+                    </ol>
+                </div>
+                
+                <div class="instructions">
+                    <h3>Connect to a Friend:</h3>
+                    <div class="connect-form">
+                        <input type="text" id="connect-id-input" placeholder="Enter friend's Chat ID..." maxlength="6">
+                        <button id="connect-btn" class="primary-btn">Connect</button>
+                    </div>
+                    <div class="create-or-join">
+                        <span>OR</span>
+                    </div>
+                </div>
+                
+                <div class="privacy-benefits">
+                    <h3>Privacy Benefits:</h3>
+                    <ul>
+                        <li><strong>No account required:</strong> Start chatting immediately without registration</li>
+                        <li><strong>No personal information:</strong> We don't collect any personal data</li>
+                        <li><strong>No message storage:</strong> Messages are never saved on servers</li>
+                        <li><strong>Automatic deletion:</strong> Messages vanish completely after the timer expires</li>
+                        <li><strong>Encrypted communication:</strong> All messages are encrypted during transmission</li>
+                    </ul>
+                </div>
+                
+                <button id="start-chat-btn" class="primary-btn">Start New Chat</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Page -->
+    <div id="chat-page" class="page">
+        <div class="container">
+            <header>
+                <div class="logo">
+                    <!-- Enhanced golden massage icon -->
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="9" stroke="url(#goldGradient)" stroke-width="2"/>
+                        <path d="M12 8V12" stroke="url(#goldGradient)" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 16H12.01" stroke="url(#goldGradient)" stroke-width="2" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#D4AF37"/>
+                                <stop offset="100%" stop-color="#B8860B"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <h1>Evira</h1>
+                </div>
+                <div class="chat-info">
+                    <span id="chat-id-display">Chat ID: <span id="chat-id">XXXXXX</span></span>
+                    <span id="connection-status">Status: <span id="status">Ready</span></span>
+                    <span id="timer-display">Expires in: <span id="countdown">--:--</span></span>
+                </div>
+            </header>
+            
+            <div id="messages-container">
+                <div id="messages">
+                    <div class="message received">
+                        <div>Welcome to Evira! Ready to chat.</div>
+                        <div class="message-time">Just now</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="input-area">
+                <div class="timer-selection">
+                    <label for="timer-select">Auto-delete after:</label>
+                    <select id="timer-select">
+                        <option value="10">10 minutes</option>
+                        <option value="20">20 minutes</option>
+                        <option value="30">30 minutes</option>
+                    </select>
+                </div>
+                <div class="message-input-container">
+                    <input type="text" id="message-input" placeholder="Type your message...">
+                    <button id="send-btn">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
